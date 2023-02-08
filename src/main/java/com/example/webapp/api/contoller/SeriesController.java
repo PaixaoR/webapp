@@ -1,17 +1,27 @@
 package com.example.webapp.api.contoller;
 
 import com.example.webapp.api.model.SerieResponse;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RequestMapping("/series")
 public interface SeriesController {
 
-    @GetMapping("/buscar")
-    ResponseBody<SerieResponse>   buscarSeries();
-    @PostMapping("/criar")
+@PostMapping("criar")
     String criarSeries();
-    @PutMapping("/atualizar")
+
+@PutMapping("atualizar")
     String atualizarSeries();
-    @DeleteMapping("/deletar")
+
+    @GetMapping(value ="buscar",produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseBody
+    ResponseEntity<SerieResponse> buscarSeries();
+
+@DeleteMapping("deletar")
     String deletarSeries();
+
 }
+
+
+

@@ -5,7 +5,23 @@ public class SerieResponse {
     private String title;
 
     public SerieResponse(Integer id, String title) {
-        id=id;
-        title=title;
+        this.id=id;
+        this.title=title;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 }
