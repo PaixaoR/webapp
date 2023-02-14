@@ -1,21 +1,22 @@
 package com.example.webapp.api.contoller;
 
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.*;
 
+@RequestMapping("/movies")
 public interface MovieController {
 
     @PostMapping("criar")
     String criarMovies();
 
     @PutMapping("atualizar")
-        String atualizarMovies();
+    String atualizarMovies();
 
-@GetMapping("buscar")
+    @GetMapping(value ="buscar",produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseBody
     String buscarMovies();
 
-@DeleteMapping("deletar")
-    String deletarMovies();}
+    @DeleteMapping("deletar")
+    String deletarMovies();
+}
 

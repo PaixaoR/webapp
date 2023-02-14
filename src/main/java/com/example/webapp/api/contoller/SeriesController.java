@@ -8,17 +8,17 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/series")
 public interface SeriesController {
 
-@PostMapping("criar")
+    @PostMapping("criar")
     String criarSeries();
 
-@PutMapping("atualizar")
+    @PutMapping("atualizar")
     String atualizarSeries();
 
     @GetMapping(value ="buscar",produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
     ResponseEntity<SerieResponse> buscarSeries();
 
-@DeleteMapping("deletar")
+    @DeleteMapping("deletar")
     String deletarSeries();
 
 }
